@@ -1,14 +1,14 @@
 ---
 - name: Build project with Maven
   hosts: build
-  become: yes
 
   roles:
+    - common
     - build
 
 - name: Deploy project with Tomcat
   hosts: deploy
-  become: yes
 
   roles:
+    - common
     - deploy
