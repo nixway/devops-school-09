@@ -1,20 +1,15 @@
 ---
 # tasks file for common
-- name: Installing Docker on servers
-  hosts: all
-  become: yes
+- name: Ensure docker-compose & docker package is present
+  ansible.builtin.package:
+    name: {{ item }}
+    state: present
+  loop:
+    - docker-compose-switch
+    - docker-ce
 
-  tasks:
-    - name: Ensure docker-compose & docker package is present
-      ansible.builtin.package:
-        name: {{ item }}
-        state: present
-      loop:
-        - docker-compose-switch
-        - docker-ce
-
-    - name: Ensure docker service is started
-      ansible.builtin.service:
-        name: docker
-        state: started
-        enabled: yes
+- name: Ensure docker service is started
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: yes
