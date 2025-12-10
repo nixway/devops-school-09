@@ -1,6 +1,6 @@
 galaxy_info:
   author: Sabir Abdurakhmanov
-  description: Deploy boxfuse project
+  description: Ensure docker is present
   company: devops-school.ru
 
   # If the issue tracker for your role is not on github, uncomment the
