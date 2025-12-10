@@ -3,7 +3,7 @@
 - name: Ensure docker-compose & docker package is present
   ansible.builtin.package:
     name:
-    - docker-compose-switch
+    - docker-compose
     - docker-ce
     state: present
   become: yes
